@@ -1,0 +1,214 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-neutral);
+  width: 400px;
+  padding: 20px 20px 30px;
+  border-radius: 22px;
+}
+
+.card .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card .header .user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card .header .user .detail p {
+  font-size: 15px;
+  font-weight: 15px;
+  color: var(--color-secondary);
+}
+
+.card .header .postdate p {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.card .header .user img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.card .body {
+  margin-bottom: 25px;
+}
+
+.card .body a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.card .body h3 {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  margin-bottom: 15px;
+}
+
+.card .body h3::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 100%;
+  background: #1A1B1F;
+background: linear-gradient(90deg, #1A1B1F00 0%, #1A1B1FD8 60%, #1A1B1FFF 80%, #1A1B1FFF 100%);
+}
+
+.card .body p {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.card .schedule {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.card .schedule ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+.card .schedule ul li {
+  height: 75px;
+  width: 75px;
+  border-radius: 15px;
+  background-color: #121116;
+}
+
+.card .schedule ul li time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card .schedule ul li time span {
+  font-size: 17px;
+  line-height: 23px;
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.card .schedule ul .arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+}
+
+.card .schedule ul .arrow img {
+  width: 33%;
+  height: 33%;
+}
+
+.card .hr {
+  height: 1px;
+  width: 100%;
+  border-radius: 0.5px;
+  background-color: var(--color-secondary);
+  margin-bottom: 15px;
+}
+
+.card .footer {
+  display: flex;
+  gap: 10px;
+}
+
+.card .footer .attendees {
+  position: relative;
+  display: flex;
+  width: 117.5px;
+  margin-right: 4px;
+}
+
+.card .footer .attendees .attendee {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: black;
+  outline: 4px solid var(--color-neutral);
+  overflow: hidden;
+}
+
+.card .footer .attendees .attendee:nth-of-type(2) {
+  z-index: 3;
+  position: absolute;
+  left: calc((45px / 2 + 5px));
+}
+
+.card .footer .attendees .attendee:nth-of-type(3) {
+  z-index: 3;
+  position: absolute;
+  left: calc(45px + 5px);
+}
+
+.card .footer .attendees .attendee img {
+  width: 100%;
+  height: 100%;
+}
+
+.card .footer .attendees .count {
+  position: absolute;
+  left: calc(45px * 1.5 + 5px);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  outline: 4px solid var(--color-neutral);
+}
+
+.card .footer .attendees .count .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: 4px solid var(--color-accent);
+}
+
+.card .footer .attendees .count .circle span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-dark);
+}
+
+.card .footer button {
+  height: 45px;
+  padding: 0 40px;
+  border-radius: calc(45px / 2);
+  border: none;
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: 500;
+  text-align: center;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}

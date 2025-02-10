@@ -4,8 +4,12 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #dddddd;
+  --color-primary: #dddddd;
+  --color-secondary: #6b6c6f;
+  --color-accent: #c4da88;
+  --color-dark: #121116;
+  --color-neutral: #1a1b1f;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,9 +21,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  letter-spacing: -0.75px;
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
+  background-color: #121116;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 500;
+  margin-bottom: 70px;
+}
+
+h3 {
+  font-size: 45px;
+  line-height: 51px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 500;
 }
