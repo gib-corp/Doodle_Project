@@ -5,9 +5,6 @@ import Avatar02 from "../../assets/avatar-02.jpg";
 import Avatar03 from "../../assets/avatar-03.jpg";
 import Avatar04 from "../../assets/avatar-04.jpg";
 
-import ArrowLeft from "../../assets/arrow-left.svg";
-import ArrowRight from "../../assets/arrow-right.svg";
-
 import "./Card.css";
 
 const Card = ({ event }) => {
@@ -41,15 +38,12 @@ const Card = ({ event }) => {
       </div>
       <div className="schedule">
         <ul>
-          <li className="arrow">
-            <img src={ArrowLeft} alt="Left Arrow" />
-          </li>
           {dates ? (
             dates.map(
               (date, index) =>
                 index < 3 && (
                   <li key={index}>
-                    <time datetime={date.date}>
+                    <time dateTime={date.date}>
                       <span className="month">
                         {new Date(date.date).toLocaleDateString("en-US", {
                           month: "short",
@@ -67,12 +61,13 @@ const Card = ({ event }) => {
           ) : (
             <p>No dates available</p>
           )}
-          <li className="arrow">
-            <img src={ArrowRight} alt="Right Arrow" />
-          </li>
         </ul>
       </div>
-      <div className="hr"></div>
+      <div className="dots">
+        <div className="dot"></div>
+        <div className="dot"></div>
+        <div className="dot"></div>
+      </div>
       <div className="footer">
         <div className="attendees">
           <div className="attendee">
@@ -90,7 +85,7 @@ const Card = ({ event }) => {
             </div>
           </div>
         </div>
-        <button className="join">Join</button>
+        <Link to={`/api/events/${event.id}`} className="join">Join</Link>
       </div>
     </div>
   );

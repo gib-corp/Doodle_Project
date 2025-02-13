@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Event.css";
 
 const Event = () => {
-  
+  const baseURL = "http://localhost:3000/api/events";
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
-    eventName: "",
+    name: "",
     description: "",
     author: "",
     dates: [],
@@ -23,22 +25,29 @@ const Event = () => {
   const handleDate = (e) => {
     const newDate = e.target.value;
     if (!form.dates.includes(newDate)) {
-      const sortedDates = [...formDates, newDate].sort((a, b) => Date.parse(a) - Date.parse(b));
+
+      const sortedDates = [...form.dates, newDate].sort(
+        (a, b) => Date.parse(a) - Date.parse(b)
+      );
+
       setForm((prevForm) => ({
         ...prevForm,
         dates: sortedDates,
       }));
     }
-  }
+  };
 
-  const handleForm = (e) => {
+  const handleForm = async (e) => {
     e.preventDefault();
-
-    if (form.eventName && form.description && form.author && form.dates) {
-      setMyTasks((prevTasks) => [...prevTasks, form]);
-
+    if (form.name && form.description && form.author && form.dates) {
+      try {
+        await axios.post(baseURL, form);
+        navigate("/");
+      } catch (error) {
+        console.error("Erreur lors de la création de l'événement :", error);
+      }
       setForm({
-        eventName: "",
+        name: "",
         description: "",
         author: "",
         dates: [],
@@ -49,15 +58,15 @@ const Event = () => {
   return (
     <main>
       <h1>Create an event</h1>
-      <form>
+      <form onSubmit={handleForm}>
         <fieldset className="fieldName">
-          <label htmlFor="eventName">Event Name</label>
+          <label htmlFor="name">Event Name</label>
           <input
             type="text"
-            id="eventName"
-            name="eventName"
+            id="name"
+            name="name"
             placeholder="Event Name"
-            value={form.eventName}
+            value={form.name}
             onChange={handleChange}
           />
         </fieldset>
@@ -68,7 +77,7 @@ const Event = () => {
             id="description"
             name="description"
             placeholder="Description"
-            value={form.eventName}
+            value={form.description}
             onChange={handleChange}
           />
         </fieldset>
@@ -79,21 +88,15 @@ const Event = () => {
             id="author"
             name="author"
             placeholder="Author"
-            value={form.eventName}
+            value={form.author}
             onChange={handleChange}
           />
         </fieldset>
         <fieldset className="fieldDate">
           <label htmlFor="dates">Due date</label>
-          <input
-            type="date"
-            id="dates"
-            name="dates"
-            value={form.eventName}
-            onChange={handleDate}
-          />
+          <input type="date" id="dates" name="dates" onChange={handleDate} />
         </fieldset>
-        <button>Submit</button>
+        <button type="submit">Submit</button>
       </form>
     </main>
   );
