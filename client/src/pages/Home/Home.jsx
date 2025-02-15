@@ -29,7 +29,6 @@ function Home() {
 
   return (
     <main>
-      <h1>Latest events</h1>
       <div id="events">
         {events && events.length > 0 ? (
           events.map(event => (

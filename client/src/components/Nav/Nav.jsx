@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-import Avatar01 from "../../assets/avatar-01.jpg";
-
 const Nav = () => {
   return (
     <nav>

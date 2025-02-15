@@ -1,37 +1,9 @@
 [
   {
-    "id": "522d738eaf16",
-    "name": "Hello",
-    "author": "Bastien le vrai",
-    "description": "Je m'appelle Bastien et j'aime l'eau pétillante",
-    "dates": [
-      "2025-02-13",
-      "2025-02-14",
-      "2025-02-15"
-    ],
-    "created_at": "2025-02-12T13:23:13.273Z",
-    "num_modification": 0,
-    "last_modification": "2025-02-12T13:23:13.273Z",
-    "attendees": []
-  },
-  {
-    "id": "cbfa859d1f71",
-    "name": "Abc",
-    "author": "Abc",
-    "description": "Abc",
-    "dates": [
-      "2025-02-12"
-    ],
-    "created_at": "2025-02-12T13:19:09.259Z",
-    "num_modification": 0,
-    "last_modification": "2025-02-12T13:19:09.259Z",
-    "attendees": []
-  },
-  {
     "id": "f5b6564b5dc4",
     "name": "My sweet 16",
     "description": "I am going to be 16, let us all party together! Help me pick a date so we can go together",
-    "author": "John Doe",
+    "author": "Clarence Lobo",
     "dates": [
       "2025-03-17",
       "2025-03-18",
@@ -66,6 +38,10 @@
           {
             "date": "2025-03-21",
             "available": true
+          },
+          {
+            "date": "2025-03-21",
+            "available": false
           }
         ]
       }
@@ -76,9 +52,61 @@
   },
   {
     "id": "38b643aeb883",
-    "name": "The big sale @ The Mall",
+    "name": "The Big Sale",
     "description": "I want to buy stuff at the mall, but don't want to go alone who is up?",
-    "author": "Jean D'eau",
+    "author": "Xiao Mei",
+    "dates": [
+      "2025-01-10",
+      "2025-02-10",
+      "2025-03-10",
+      "2025-03-11",
+      "2025-03-12"
+    ],
+    "attendees": [
+      {
+        "name": "Michou",
+        "dates": [
+          {
+            "date": "2025-01-10",
+            "available": true
+          }
+        ]
+      },
+      {
+        "name": "Jane Doe",
+        "dates": [
+          {
+            "date": "2025-01-10",
+            "available": true
+          },
+          {
+            "date": "2025-02-10",
+            "available": true
+          },
+          {
+            "date": "2025-03-10",
+            "available": true
+          },
+          {
+            "date": "2025-03-11",
+            "available": true
+          },
+          {
+            "date": "2025-03-12",
+            "available": false
+          }
+        ]
+      }
+    ],
+    "created_at": "2024-11-13T14:00",
+    "num_modification": 0,
+    "last_modification": "2024-11-13T14:00"
+  },
+  {
+    "id": "38b643aeb983",
+    "name": "Dinner Out",
+    "description": "Let’s ditch the kitchen and try a new restaurant! Who’s up for good food!",
+    "author": "Xiao Mei",
     "dates": [
       "2025-01-10",
       "2025-02-10",

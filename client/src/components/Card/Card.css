@@ -5,6 +5,7 @@
   width: 400px;
   padding: 20px 20px 30px;
   border-radius: 22px;
+  overflow: hidden;
 }
 
 .card .header {
@@ -38,7 +39,7 @@
 }
 
 .card .body {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
 .card .body a {
@@ -51,7 +52,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .card .body h3::after {
@@ -74,27 +75,53 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 500;
+  min-height: 48px;
   color: var(--color-secondary);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card .schedule {
+  position: relative;
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  height: 75px;
 }
 
 .card .schedule ul {
+  position: absolute;
   display: flex;
-  justify-content: center;
-  gap: 15px;
   list-style: none;
-  width: 100%;
+
+  animation: slideLoop 17s linear infinite;
+  transition: animation-duration 0.5s ease;
+  animation-play-state: paused;
+}
+
+.card:hover .schedule ul {
+  animation-play-state: running;
+}
+
+@keyframes slideLoop {
+  0% {
+    left: calc((-65px + 200px) - var(--quantity) * 90px); /* Position de départ (droite) */
+  }
+  100% {
+    left: calc((-65px + 200px) - (var(--quantity) * 90px) *2); /* Déplacement vers la gauche */
+  }
 }
 
 .card .schedule ul li {
   height: 75px;
   width: 75px;
+  margin: 0 7.5px;
   border-radius: 15px;
-  background-color: #151619;
+  background-color: #1e2024;
 }
 
 .card .schedule ul li time {
@@ -106,7 +133,7 @@
 }
 
 .card .schedule ul li time span {
-  font-size: 17px;
+  font-size: 18px;
   line-height: 23px;
   font-weight: 500;
   color: var(--color-primary);
@@ -116,12 +143,12 @@
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .card .dots .dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: var(--color-secondary);
 }
