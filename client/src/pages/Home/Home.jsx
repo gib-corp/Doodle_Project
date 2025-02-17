@@ -37,6 +37,20 @@ function Home() {
         ) : (
           <p>Aucun événement trouvé.</p>
         )}
+        {events && events.length > 0 ? (
+          events.map(event => (
+            <Card key={event.id} event={event} />
+          ))
+        ) : (
+          <p>Aucun événement trouvé.</p>
+        )}
+        {events && events.length > 0 ? (
+          events.map(event => (
+            <Card key={event.id} event={event} />
+          ))
+        ) : (
+          <p>Aucun événement trouvé.</p>
+        )}
       </div>
     </main>
   );
